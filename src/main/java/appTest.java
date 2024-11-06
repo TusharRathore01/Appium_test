@@ -18,6 +18,7 @@ public class appTest {
 //        service.start();
         openMobileApp.openApp();
 //        service.stop();
+        System.out.println("hello");
     }
 
 }
