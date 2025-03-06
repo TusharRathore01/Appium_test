@@ -1,0 +1,22 @@
+name: Run Appium Tests
+
+on:
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  run-tests:
+    runs-on: self-hosted  # Use MacBook as the runner
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Test Cases
+        run: mvn test -Dtest=notificationPageTest#verifyNotNowNotififcation
+
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: target/surefire-reports
