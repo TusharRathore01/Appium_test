@@ -19,7 +19,7 @@ public class capability {
 
     public static void setCapability() throws IOException{
         
-        //appiumSetup.startAppiumServer();
+        appiumSetup.startAppiumServer();
         DesiredCapabilities cap = new DesiredCapabilities();
         URL url = new URL("http://127.0.0.1:4723/");
         String platform= System.getProperty("os.name");

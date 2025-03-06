@@ -3,6 +3,9 @@ package pageObject;
 import org.openqa.selenium.By;
 
 import appium.capability;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 
 public class utility{
 
@@ -21,5 +24,9 @@ public class utility{
 
     protected boolean isDisplayed(By by){
         return capability.driver.findElement(by).isDisplayed();
+    }
+
+    protected void keyPress(String key){
+        ((AndroidDriver) capability.driver).pressKey(new KeyEvent(AndroidKey.valueOf(key)));
     }
 }

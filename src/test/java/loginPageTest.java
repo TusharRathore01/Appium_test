@@ -15,7 +15,7 @@ public class loginPageTest extends launch {
         Assert.assertEquals(loginPage.getBannerMessage(),"Enter the email you used during the application process on our website.");
         Assert.assertTrue(loginPage.isPasswordHeadingDisplayed(),"Password Heading not Displayed");
         Assert.assertTrue(loginPage.isVisibleElementDisplayed(),"Password visible element not Displayed");
-        Assert.assertEquals(loginPage.isPrivacyPolicyFooterDisplayed(), "new UiSelector().text(\"I accept the Mobile Terms & Conditions and the Privacy Policy.\")");
+        Assert.assertEquals(loginPage.isPrivacyPolicyFooterDisplayed(), "I accept the Mobile Terms & Conditions and the Privacy Policy.");
 
     }
 
