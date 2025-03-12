@@ -23,6 +23,7 @@ public class loginPageTest extends launch {
     public void verifyValidLogin() throws IOException, InterruptedException{
         
         loginPage loginPage = new loginPage();
+
         loginPage.enterUsername("kamil1001@yopmail.com");
         loginPage.enterPassword("Test@1234");
         loginPage.clickCheckbox();

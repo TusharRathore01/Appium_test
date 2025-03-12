@@ -15,7 +15,6 @@ public class appiumSetup {
 
         AppiumServiceBuilder builder = new AppiumServiceBuilder();
         String platform= System.getProperty("os.name");
-        //String platform = detectPlatform.getPlatform();
         if(platform.contains("Windows")){
         builder.withIPAddress("127.0.0.1")
                 .usingPort(4723)
@@ -23,8 +22,8 @@ public class appiumSetup {
         }
         else if(platform.contains("Mac")){
                 builder.withIPAddress("127.0.0.1")
-                        .usingPort(4723)
-                        .withAppiumJS(new File("/Users/qa-gojoko/node_modules/appium/build/lib/main.js"));     
+                        .usingPort(4723) 
+                        .withTimeout(Duration.ofSeconds(60));   
         }
         else{
             throw new IOException("OS Failed to Detect");
