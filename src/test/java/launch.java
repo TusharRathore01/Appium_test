@@ -18,12 +18,12 @@ public class launch {
             e.printStackTrace();
         }
     }
-    @AfterSuite
-    void teardown()
-    {
-        appiumSetup.service.stop();
-        capability.driver.quit();
+    // @AfterSuite
+    // void teardown()
+    // {
+    //     appiumSetup.service.stop();
+    //     capability.driver.quit();
 
-    }
+    // }
     
 }
