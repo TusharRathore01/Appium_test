@@ -6,11 +6,11 @@ import io.appium.java_client.AppiumBy;
 import pageObject.utility;
 
 public class notificationPage extends utility {
-    public final By headerField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Allow push notifications\")");
-    public final By textField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Allow push notifications\")");
-    public final By notNowButtonField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Not now\")");
-    public final By allowButtonField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Allow notifications\")");
-    public final By allowPermissionField = AppiumBy.androidUIAutomator("new UiSelector().resourceId(\"com.android.permissioncontroller:id/permission_allow_button\")");
+    private final By headerField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Allow push notifications\")");
+    private final By textField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Allow push notifications\")");
+    private final By notNowButtonField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Not now\")");
+    private final By allowButtonField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Allow notifications\")");
+    private final By allowPermissionField = AppiumBy.androidUIAutomator("new UiSelector().resourceId(\"com.android.permissioncontroller:id/permission_allow_button\")");
 
     public boolean isHeaderDisplayed(){
         return isDisplayed(headerField);

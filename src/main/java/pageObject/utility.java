@@ -3,6 +3,7 @@ package pageObject;
 import org.openqa.selenium.By;
 
 import appium.capability;
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
@@ -28,5 +29,19 @@ public class utility{
 
     protected void keyPress(String key){
         ((AndroidDriver) capability.driver).pressKey(new KeyEvent(AndroidKey.valueOf(key)));
+    }
+
+    protected void scrollable(){
+        String uiScrollable = "new UiScrollable(new UiSelector().scrollable(true)).scrollForward()";
+        boolean canScroll=true;
+        while(canScroll){
+            try{
+            capability.driver.findElement(AppiumBy.androidUIAutomator(uiScrollable));
+            } catch(Exception e){
+                canScroll=false;
+            }
+
+        }
+
     }
 }

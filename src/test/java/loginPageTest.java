@@ -40,5 +40,13 @@ public class loginPageTest extends launch {
         Assert.assertEquals(loginPage.getErrorMessage(),"There's no account associated with this email.");
 
     }
+
+    @Test(testName="Verify the T&C conditions")
+    public void verifyTermsAndConditions(){
+        loginPage loginPage = new loginPage();
+        loginPage.clickTermsConditions();
+        loginPage.getAllText();
+
+    }
     
 }

@@ -8,13 +8,13 @@ import io.restassured.response.Response;
 import pageObject.utility;
 
 public class otpPage extends utility implements kobilResponse{
-    public final By verifyAccountField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Verify your Account\")");
-    public final By codeSentMessageDislayed = AppiumBy.androidUIAutomator("new UiSelector().text(\"Enter the verification code sent to: \")");
-    public final By phoneNumberField = AppiumBy.xpath("//android.widget.TextView[contains(@text, '+44')]");
-    public final By receivedCodeField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Haven't received the code?\")");
-    public final By resendbuttonField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Resend\")");
-    public final By CodeInputField = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"SMS code input\"]/android.view.ViewGroup[14]");
-    public final By errorMsgField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Invalid code. Check your SMS for the most recent code.\")");
+    private final By verifyAccountField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Verify your Account\")");
+    private final By codeSentMessageDislayed = AppiumBy.androidUIAutomator("new UiSelector().text(\"Enter the verification code sent to: \")");
+    private final By phoneNumberField = AppiumBy.xpath("//android.widget.TextView[contains(@text, '+44')]");
+    private final By receivedCodeField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Haven't received the code?\")");
+    private final By resendbuttonField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Resend\")");
+    private final By CodeInputField = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"SMS code input\"]/android.view.ViewGroup[14]");
+    private final By errorMsgField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Invalid code. Check your SMS for the most recent code.\")");
 
     public boolean isVerifyAccountDisplayed(){
         return isDisplayed(verifyAccountField);

@@ -6,10 +6,10 @@ import io.appium.java_client.AppiumBy;
 import pageObject.utility;
 
 public class biometricPage extends utility {
-    public final By headerField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Enable biometric login?\")");
-    public final By textField = AppiumBy.androidUIAutomator("new UiSelector().text(\"You can turn this feature on or off at any time under settings.\")");
-    public final By notNowButtonField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Not now\")");
-    public final By enableButtonField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Enable\")");
+    private final By headerField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Enable biometric login?\")");
+    private final By textField = AppiumBy.androidUIAutomator("new UiSelector().text(\"You can turn this feature on or off at any time under settings.\")");
+    private final By notNowButtonField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Not now\")");
+    private final By enableButtonField = AppiumBy.androidUIAutomator("new UiSelector().text(\"Enable\")");
     
     public boolean isHeaderDisplayed(){
         return isDisplayed(headerField);

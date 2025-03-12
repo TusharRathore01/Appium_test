@@ -1,11 +1,11 @@
 name: Run Appium Tests
 
 on:
-  workflow_dispatch:  # Allows manual triggering
+  workflow_dispatch: 
 
 jobs:
   run-tests:
-    runs-on: self-hosted  # Use MacBook as the runner
+    runs-on: self-hosted  
 
     steps:
       - name: Checkout Repository
