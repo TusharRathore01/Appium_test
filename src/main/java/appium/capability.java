@@ -37,15 +37,27 @@ public class capability {
             }
             else if(platform.contains("Mac")){
                 Device device = getDeviceInfo.iosDeviceInfo();
-                cap.setCapability("appium:deviceName", device.getDeviceProductName());
-                cap.setCapability("appium:udid", device.getUniqueDeviceID());
-                cap.setCapability("platformName", "ios");
-                cap.setCapability("appium:platformVersion", device.getBuildVersion());
-                cap.setCapability("appium:automationName", "XCUITest");
-                cap.setCapability("appium:bundleId", "com.reevomoney.uat");
-                cap.setCapability("wdaLaunchTimeout", 1000);
+                if(device.getDeviceProductName().contains("Android")){
+                    cap.setCapability("appium:deviceName", device.getDeviceProductName());
+                    cap.setCapability("appium:udid", device.getUniqueDeviceID());
+                    cap.setCapability("platformName", "Android");
+                    cap.setCapability("appium:platformVersion", device.getBuildVersion());
+                    cap.setCapability("appium:automationName", "uiAutomator2");
+                    cap.setCapability("appium:appPackage", "com.reevomoney.uat");
+                    cap.setCapability("appium:appActivity", "com.reevo.MainActivity");
+                    driver = new AndroidDriver(url,cap);
+                }
+                else{
+                    cap.setCapability("appium:deviceName", device.getDeviceProductName());
+                    cap.setCapability("appium:udid", device.getUniqueDeviceID());
+                    cap.setCapability("platformName", "ios");
+                    cap.setCapability("appium:platformVersion", device.getBuildVersion());
+                    cap.setCapability("appium:automationName", "XCUITest");
+                    cap.setCapability("appium:bundleId", "com.reevomoney.uat");
+                    cap.setCapability("wdaLaunchTimeout", 1000);
+                    driver = new IOSDriver(url,cap);
+                }
 
-                driver = new IOSDriver(url,cap);
             }
         }catch(Exception e) {
             e.printStackTrace();
