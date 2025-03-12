@@ -15,7 +15,6 @@ public class appiumSetup {
 
         AppiumServiceBuilder builder = new AppiumServiceBuilder();
         String platform= System.getProperty("os.name");
-        //String platform = detectPlatform.getPlatform();
         if(platform.contains("Windows")){
         builder.withIPAddress("127.0.0.1")
                 .usingPort(4723)
